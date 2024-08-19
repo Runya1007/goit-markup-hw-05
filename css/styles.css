@@ -547,8 +547,7 @@ img {
   opacity: 0;
   pointer-events: none;
   transition: visibility 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    pointer-events 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
@@ -557,10 +556,13 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 4px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
   width: 408px;
   min-height: 584px;
   background-color: #fcfcfc;
   padding: 72px 24px 24px 24px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
@@ -628,8 +630,9 @@ img {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   padding-left: 38px;
-  outline: none;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-input:focus {
@@ -638,7 +641,7 @@ img {
 .modal-icon {
   position: absolute;
   top: 50%;
-  left: 19px;
+  left: 16px;
   transform: translateY(-50%);
   fill: #2e2f42;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -655,24 +658,17 @@ img {
   color: #8e8f99;
   margin-bottom: 16px;
 }
-.modal-form-label-comment {
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.04em;
-  color: #8e8f99;
-  display: block;
-  margin-bottom: 4px;
-}
 
 .modal-textarea {
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
-  width: 360px;
+  width: 100%;
   height: 120px;
   padding: 8px 16px;
+  background-color: transparent;
+  outline: transparent;
   resize: none;
-  outline: none;
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-textarea:focus {
@@ -699,6 +695,10 @@ img {
   justify-content: center;
   align-items: center;
   margin-right: 8px;
+  fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .custom-label-checkbox {
@@ -719,6 +719,8 @@ img {
 .checkbox:checked + .custom-label-checkbox > .custom-checkbox {
   border-color: transparent;
   background-color: #404bbf;
+  fill: #f4f4fd;
+  border: none;
 }
 
 .visually-hidden {
